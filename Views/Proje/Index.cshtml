@@ -1,0 +1,39 @@
+﻿@using MvcCv.Models.Entity
+@model List<Tbldeneyimler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 style="background-color:lightgrey">Proje Listesi</h2>
+<table  class="table table-bordered">
+    <tr >
+
+        <th> ID </th>
+        <th> Başlık </th>
+        <th> Alt Başlık</th>
+        <th> Açıklama</th>
+        <th> Tarih</th>
+        <th> Sil</th>
+        <th> Düzenle</th>
+ 
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th> @x.ID</th>
+            <th> @x.Baslik</th>
+            <th> @x.Altbaslik</th>
+            <th> @x.Aciklama</th>
+            <th> @x.Tarih</th>
+            <th><a href="/Proje/ProjeSil/@x.ID" class="btn btn-danger">Sil</a> </th>
+            <th><a href="/Proje/ProjeDuzenle/@x.ID" class="btn btn-warning">Düzenle</a> </th>
+
+        </tr>
+
+    }
+
+</table>
+<a href="/Proje/ProjeEkle/" class="btn btn-primary">Yeni Proje Ekle</a>
+

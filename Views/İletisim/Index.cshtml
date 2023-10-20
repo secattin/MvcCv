@@ -1,0 +1,64 @@
+﻿@using MvcCv.Models.Entity
+@model List<Tbl_iletişim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            
+                                <div class="tab-pane" id="timeline">
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                        @foreach(var x in Model) 
+                                        {
+                                            <!-- timeline time label -->
+                                            <div class="time-label">
+                                                <span class="bg-info">
+                                                    @(((DateTime)x.Tarih).ToString("yyyy-MM-dd"))
+                                                </span>
+                                            </div>
+                                            <!-- /.timeline-label -->
+                                            <!-- timeline item -->
+
+
+                                            <div>
+                                                <i class="fas fa-comments bg-warning"></i>
+                                                <div class="timeline-item">
+                                                    <span class="time"><i class="far fa-clock"></i> @x.Mail</span>
+                                                    <div class="timeline-body">
+                                                        @x.Mesaj
+
+                                                    </div>
+                                                    <h3 class="timeline-header"><a href="#">@x.Adsoyad</a> @x.Konu</h3>
+                                                      
+                                                </div>
+                                            </div>
+                                        }
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        
+    </section>
+</body>
+</html>

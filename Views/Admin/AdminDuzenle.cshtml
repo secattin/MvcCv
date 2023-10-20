@@ -1,0 +1,26 @@
+﻿@model MvcCv.Models.Entity.Tbl_admin
+@{
+    ViewBag.Title = "AdminDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Şifre Güncelleme Sayfası</h4>
+<form method="post">
+    @Html.Label("Admin ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.Kullaniciad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+
+</form>
+
+
+
+
+
